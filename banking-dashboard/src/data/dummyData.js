@@ -17,7 +17,7 @@ export const quickActions = [
 export const recentTransactions = [
   {
     id: "TXN-001",
-    customer: "Aisha Rahman",
+    customer: "Virat Kohli",
     type: "Deposit",
     amount: 12500.0,
     date: "2026-11-17",
@@ -25,7 +25,7 @@ export const recentTransactions = [
   },
   {
     id: "TXN-002",
-    customer: "John Miller",
+    customer: "Rohit Sharma",
     type: "Transfer",
     amount: 3200.5,
     date: "2026-11-17",
@@ -33,7 +33,7 @@ export const recentTransactions = [
   },
   {
     id: "TXN-003",
-    customer: "Priya Sharma",
+    customer: "MS Dhoni",
     type: "Withdrawal",
     amount: 850.0,
     date: "2026-11-16",
@@ -41,7 +41,7 @@ export const recentTransactions = [
   },
   {
     id: "TXN-004",
-    customer: "Daniel Chen",
+    customer: "Shubman Gill",
     type: "Transfer",
     amount: 5400.0,
     date: "2026-11-16",
@@ -49,7 +49,7 @@ export const recentTransactions = [
   },
   {
     id: "TXN-005",
-    customer: "Fatima Noor",
+    customer: "Hardik Pandya",
     type: "Deposit",
     amount: 9800.75,
     date: "2026-11-15",
@@ -57,7 +57,7 @@ export const recentTransactions = [
   },
   {
     id: "TXN-006",
-    customer: "Robert Kim",
+    customer: "KL Rahul",
     type: "Withdrawal",
     amount: 240.0,
     date: "2026-11-15",
