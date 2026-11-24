@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 import {
   LayoutDashboard,
@@ -17,16 +16,16 @@ import {
 import Logo from "./Logo.jsx";
 
 const navItems = [
-  { id: "dashboard", label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-  { id: "customers", label: "Customers", path: "/customers", icon: Users },
-  { id: "accounts", label: "Accounts", path: "/accounts", icon: Wallet },
-  { id: "transfers", label: "Fund Transfers", path: "/transfers", icon: ArrowLeftRight },
-  { id: "loans", label: "Loans", path: "/loans", icon: Landmark },
-  { id: "transactions", label: "Transactions", path: "/transactions", icon: Receipt },
-  { id: "lock", label: "Lock Monitor", path: "/lock-monitor", icon: Lock },
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "customers", label: "Customers", icon: Users },
+  { id: "accounts", label: "Accounts", icon: Wallet },
+  { id: "transfers", label: "Fund Transfers", icon: ArrowLeftRight },
+  { id: "loans", label: "Loans", icon: Landmark },
+  { id: "transactions", label: "Transactions", icon: Receipt },
+  { id: "lock", label: "Lock Monitor", icon: Lock },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ currentPage, setCurrentPage }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const content = (
@@ -47,28 +46,29 @@ export default function Sidebar() {
         {navItems.map((item) => {
           const Icon = item.icon;
 
+          const active = item.id === currentPage;
           return (
-            <NavLink
+            <button
               key={item.id}
-              to={item.path}
-              onClick={() => setMobileOpen(false)}
-              className={({ isActive }) =>
-                `flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                  isActive
-                    ? "bg-navy-500 text-white shadow-sm"
-                    : "text-slate-300 hover:bg-slate-700/50 hover:text-white"
-                }`
-              }
+              onClick={() => {
+                setCurrentPage(item.id);
+                setMobileOpen(false);
+              }}
+              className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                active
+                  ? "bg-navy-500 text-white shadow-sm"
+                  : "text-slate-300 hover:bg-slate-700/50 hover:text-white"
+              }`}
             >
               <Icon size={18} />
               <span>{item.label}</span>
-            </NavLink>
+            </button>
           );
         })}
       </nav>
 
       <div className="border-t border-slate-700/60 p-4">
-        <p className="text-xs text-slate-400">India Bank v1.0</p>
+        <p className="text-xs text-slate-400">BankEase v1.0</p>
       </div>
     </div>
   );
